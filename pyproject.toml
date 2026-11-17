@@ -3,10 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my-demo-cli-2026" # Put your own name
-version = "0.9.3"
+name = "my-demo-cli-2026" # Оставьте ваше уникальное имя
+version = "0.9.4"
 requires-python = ">=3.10"
-dependencies = [] # BUG 3: without requests
+dependencies = [
+    "requests>=2.31.0",
+    "tomli>=2.0.0; python_version < '3.11'", # Фикс Бага 1: бэкпорт tomllib для Python 3.10
+]
 
 [project.scripts]
-mycli = "mycli.cli:main" # BUG 4: start() function in code
+mycli = "mycli.cli:main" # Имя функции совпадает с кодом
