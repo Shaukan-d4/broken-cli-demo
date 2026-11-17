@@ -34,6 +34,7 @@ jobs:
       - name: Build wheel
         run: pip install build && python -m build
       - name: Install wheel in clean env (no src access)
+        shell: bash
         run: |
           pip install dist/*.whl
           cd ..
