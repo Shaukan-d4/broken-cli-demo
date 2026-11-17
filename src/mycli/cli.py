@@ -1,4 +1,4 @@
-import sys
+"""import sys
 import requests
 
 # Фикс Бага 1: fallback на tomli для Python 3.10
@@ -15,6 +15,20 @@ def main():
         return
 
     # Фикс Бага 2: явная кодировка utf-8 для корректной работы на Windows
+    try:
+        with open("data.txt", encoding="utf-8") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Ready! (data.txt not found, default mode)")
+"""
+import sys
+
+
+def main():
+    if "--help" in sys.argv or "-h" in sys.argv:
+        print("Usage: mycli [options]")
+        return
+
     try:
         with open("data.txt", encoding="utf-8") as f:
             print(f.read())
