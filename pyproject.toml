@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-demo-cli-2026" # Put your own name
+version = "0.9.3"
+requires-python = ">=3.10"
+dependencies = [] # BUG 3: without requests
+
+[project.scripts]
+mycli = "mycli.cli:main" # BUG 4: start() function in code
