@@ -1,4 +1,4 @@
-import tomlib   #BUG 1: ImportError at Python 3.10
+import tomllib   #BUG 1: ImportError at Python 3.10
 import requests #BUG 3: ModuleNotFoundError for user
 
 def start():
